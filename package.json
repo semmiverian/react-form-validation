@@ -22,13 +22,17 @@
     "url": "https://github.com/semmiverian/react-form-validation/issues"
   },
   "homepage": "https://github.com/semmiverian/react-form-validation#readme",
+  "peerDependencies": {
+    "react": ">=0.14.9"
+  },
   "dependencies": {
-    "react": "16.4.1",
-    "react-dom": "16.4.1"
+    "prop-types": "15.6.2"
   },
   "devDependencies": {
     "husky": "0.14.3",
     "prettier": "1.13.5",
-    "pretty-quick": "1.6.0"
+    "pretty-quick": "1.6.0",
+    "react": "16.4.1",
+    "react-dom": "16.4.1"
   }
 }
