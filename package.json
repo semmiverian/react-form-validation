@@ -4,7 +4,8 @@
   "description": "Form Validation for React using render props",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "pretty-quick --staged"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,10 @@
   "dependencies": {
     "react": "16.4.1",
     "react-dom": "16.4.1"
+  },
+  "devDependencies": {
+    "husky": "0.14.3",
+    "prettier": "1.13.5",
+    "pretty-quick": "1.6.0"
   }
 }
