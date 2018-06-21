@@ -1,5 +1,13 @@
 {
-    "presets": [
-        "env"
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "> 0.5%", "not dead"]
+        }
+      }
     ]
+  ],
+  "plugins": ["transform-class-properties", "transform-object-rest-spread"]
 }
