@@ -2,11 +2,7 @@
   "presets": [
     [
       "env",
-      {
-        "targets": {
-          "browsers": ["last 2 versions", "> 0.5%", "not dead"]
-        }
-      }
+      "react"
     ]
   ],
   "plugins": ["transform-class-properties", "transform-object-rest-spread"]

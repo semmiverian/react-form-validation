@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Form from "./utils/index";
+import FormUtils from "./utils/index";
 import Error from "./utils/Error";
 
-export default class FormComponent extends Component {
+export default class Form extends Component {
   toArray = object => {
     return Object.entries(object).reduce((carry, [key, value]) => {
       return carry.concat({
@@ -43,7 +43,7 @@ export default class FormComponent extends Component {
     const { rules, data } = this.props;
     const override = { ...data, ...overrideData };
 
-    const form = new Form(override, { ...rules });
+    const form = new FormUtils(override, { ...rules });
     const validation = form.validate();
 
     if (!validation.validated) {

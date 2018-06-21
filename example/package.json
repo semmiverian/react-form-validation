@@ -4,10 +4,10 @@
   "private": true,
   "dependencies": {
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-form-validation-render-props": "^0.1.2"
   },
   "devDependencies": {
-    "react-form-validation-render-props": "^0.1.0",
     "react-scripts": "1.1.4"
   },
   "scripts": {
