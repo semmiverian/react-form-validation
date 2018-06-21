@@ -1,8 +1,8 @@
 {
-  "name": "react-form-validation",
-  "version": "0.1.0",
+  "name": "react-form-validation-render-props",
+  "version": "0.1.1",
   "description": "Form Validation for React using render props",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "precommit": "pretty-quick --staged",
