@@ -21,7 +21,11 @@ export default class Form extends Component {
 
   static propTypes = {
     data: PropTypes.object,
-    rules: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    rules: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+      PropTypes.array
+    ]),
     name: PropTypes.string
   };
 
@@ -30,13 +34,17 @@ export default class Form extends Component {
 
     const validation = this.validate({ [key]: value });
     // check nanti dia mau ngevalidasi setiap change apa engga? kalau iya kirim hasil validasi nya
-    this.props.onChangeValue(key, value);
+    this.when(this.props.onChangeValue, () =>
+      this.props.onChangeValue(key, value)
+    );
   };
 
   onSubmit = e => {
     const validation = this.validate();
 
-    this.props.onSubmit(e, validation.validated);
+    this.when(this.props.onChangeValue, () =>
+      this.props.onSubmit(e, validation.validated)
+    );
   };
 
   validate = overrideData => {
@@ -55,6 +63,12 @@ export default class Form extends Component {
       });
 
       return validation;
+    }
+  };
+
+  when = (trueCondition, callback) => {
+    if (trueCondition) {
+      callback();
     }
   };
 

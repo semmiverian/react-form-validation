@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+// import { Form } from "react-form-validation-render-props";
 import { Form } from "./dist/index";
-import Coba from "./Coba";
 
 class App extends Component {
   state = {
@@ -13,7 +13,7 @@ class App extends Component {
     password: ["required", "between:5:10"]
   };
 
-  onChange = (key, value) => {
+  onChangeValue = (key, value) => {
     this.setState({ [key]: value });
   };
 
@@ -27,7 +27,7 @@ class App extends Component {
         <Form
           data={this.state}
           rules={this.rules}
-          onChangeValue={this.onChange}
+          onChangeValue={this.onChangeValue}
           onSubmit={this.onSubmit}
         >
           {({ isValidate, errors, onChange, data, onSubmit }) => {

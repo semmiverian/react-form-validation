@@ -955,7 +955,9 @@
                     );
                   })({}, e, r)
                 );
-                a.props.onChangeValue(e, r);
+                a.when(a.props.onChangeValue, function() {
+                  return a.props.onChangeValue(e, r);
+                });
               };
             }),
             (a.onSubmit = function(e) {
@@ -975,6 +977,9 @@
                   }),
                   u
                 );
+            }),
+            (a.when = function(e, t) {
+              e && t();
             }),
             c(a, r)
           );
@@ -1022,7 +1027,11 @@
       })();
       (d.propTypes = {
         data: u.default.object,
-        rules: u.default.oneOfType([u.default.string, u.default.object]),
+        rules: u.default.oneOfType([
+          u.default.string,
+          u.default.object,
+          u.default.array
+        ]),
         name: u.default.string
       }),
         (t.default = d);
