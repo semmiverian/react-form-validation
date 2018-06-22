@@ -29,6 +29,7 @@ class App extends Component {
           rules={this.rules}
           onChangeValue={this.onChangeValue}
           onSubmit={this.onSubmit}
+          validateOnChange={false}
         >
           {({ isValidate, errors, onChange, data, onSubmit }) => {
             return (

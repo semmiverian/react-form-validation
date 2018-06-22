@@ -29,22 +29,28 @@ export default class Form extends Component {
     name: PropTypes.string
   };
 
+  static defaultProps = {
+    validateOnChange: true
+  };
+
   onChange = key => e => {
     const value = e.target.value;
 
-    const validation = this.validate({ [key]: value });
-    // check nanti dia mau ngevalidasi setiap change apa engga? kalau iya kirim hasil validasi nya
-    this.when(this.props.onChangeValue, () =>
-      this.props.onChangeValue(key, value)
-    );
+    if (this.props.validateOnChange) {
+      this.validate({ [key]: value });
+    }
+
+    if (this.props.onChangeValue) {
+      this.props.onChangeValue(key, value);
+    }
   };
 
   onSubmit = e => {
     const validation = this.validate();
 
-    this.when(this.props.onChangeValue, () =>
-      this.props.onSubmit(e, validation.validated)
-    );
+    if (this.props.onSubmit) {
+      this.props.onSubmit(e, validation.validated);
+    }
   };
 
   validate = overrideData => {
@@ -63,12 +69,6 @@ export default class Form extends Component {
       });
 
       return validation;
-    }
-  };
-
-  when = (trueCondition, callback) => {
-    if (trueCondition) {
-      callback();
     }
   };
 
