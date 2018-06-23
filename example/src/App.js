@@ -8,9 +8,31 @@ class App extends Component {
     password: ""
   };
 
+  // rules using array
+  // rules = {
+  //   email: ["required", "email"],
+  //   password: ["required", "between:5:10"]
+  // };
+
+  // rules using string
+  // rules = {
+  //   email: 'required|email',
+  //   password: 'required|between:5:10'
+  // }
+
+  // rules using object and custom global message and custom message
   rules = {
-    email: ["required", "email"],
-    password: ["required", "between:5:10"]
+    email: {
+      rules: ["required", "email"],
+      message: "Please allow me to filling your inbox"
+    },
+    password: {
+      rules: "required|between:5:10",
+      message: {
+        required: "Allow yourself to come to our system",
+        between: "Make yourself secure"
+      }
+    }
   };
 
   onChangeValue = (key, value) => {
@@ -27,7 +49,6 @@ class App extends Component {
         <Form
           data={this.state}
           rules={this.rules}
-          onChangeValue={this.onChangeValue}
           onSubmit={this.onSubmit}
           validateOnChange={false}
         >

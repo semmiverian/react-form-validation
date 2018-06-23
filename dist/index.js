@@ -692,11 +692,14 @@
               {
                 key: "toObject",
                 value: function(e) {
-                  return e.reduce(function(e, t) {
+                  var t = this;
+                  return e.reduce(function(e, r) {
                     return (
-                      e[t.key]
-                        ? (e[t.key] = e[t.key] + ", " + t[t.key])
-                        : (e[t.key] = t[t.key]),
+                      t.isString(t.rawForm.validationRules[key].message)
+                        ? (e[r.key] = r[r.key])
+                        : e[r.key]
+                          ? (e[r.key] = e[r.key] + ", " + r[r.key])
+                          : (e[r.key] = r[r.key]),
                       e
                     );
                   }, {});

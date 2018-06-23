@@ -200,7 +200,13 @@ export default class Validator {
 
   toObject(errors) {
     return errors.reduce((carry, item) => {
-      if (carry[item.key]) {
+      const isUsingGlobalCustomMessage = this.isString(
+        this.rawForm.validationRules[key].message
+      );
+
+      if (isUsingGlobalCustomMessage) {
+        carry[item.key] = item[item.key];
+      } else if (carry[item.key]) {
         carry[item.key] = carry[item.key] + ", " + item[item.key];
       } else {
         carry[item.key] = item[item.key];
