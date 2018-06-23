@@ -6,8 +6,8 @@
     var t = {};
     function r(n) {
       if (t[n]) return t[n].exports;
-      var a = (t[n] = { i: n, l: !1, exports: {} });
-      return e[n].call(a.exports, a, a.exports, r), (a.l = !0), a.exports;
+      var i = (t[n] = { i: n, l: !1, exports: {} });
+      return e[n].call(i.exports, i, i.exports, r), (i.l = !0), i.exports;
     }
     return (
       (r.m = e),
@@ -30,13 +30,13 @@
           Object.defineProperty(n, "default", { enumerable: !0, value: e }),
           2 & t && "string" != typeof e)
         )
-          for (var a in e)
+          for (var i in e)
             r.d(
               n,
-              a,
+              i,
               function(t) {
                 return e[t];
-              }.bind(null, a)
+              }.bind(null, i)
             );
         return n;
       }),
@@ -71,7 +71,7 @@
             }
             return e;
           },
-        a = (function() {
+        i = (function() {
           function e(e, t) {
             for (var r = 0; r < t.length; r++) {
               var n = t[r];
@@ -85,7 +85,7 @@
             return r && e(t.prototype, r), n && e(t, n), t;
           };
         })();
-      var i = (function() {
+      var a = (function() {
         function e() {
           !(function(e, t) {
             if (!(e instanceof t))
@@ -94,7 +94,7 @@
             (this.errors = {});
         }
         return (
-          a(e, [
+          i(e, [
             {
               key: "record",
               value: function(e) {
@@ -162,7 +162,7 @@
           e
         );
       })();
-      t.default = i;
+      t.default = a;
     },
     function(e, t, r) {
       "use strict";
@@ -181,8 +181,8 @@
             return r && e(t.prototype, r), n && e(t, n), t;
           };
         })(),
-        a = o(r(5)),
-        i = o(r(0));
+        i = o(r(5)),
+        a = o(r(0));
       function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
@@ -196,7 +196,7 @@
           (this.validationRules = r),
           t))
             this[n] = t[n];
-          (this.validator = new a.default(t)), (this.errors = new i.default());
+          (this.validator = new i.default(t)), (this.errors = new a.default());
         }
         return (
           n(e, [
@@ -267,8 +267,8 @@
             return r && e(t.prototype, r), n && e(t, n), t;
           };
         })(),
-        a = r(3),
-        i = (s(a), s(r(2))),
+        i = r(3),
+        a = (s(i), s(r(2))),
         o = s(r(1)),
         u = s(r(0));
       function s(e) {
@@ -301,31 +301,31 @@
             if (!(e instanceof t))
               throw new TypeError("Cannot call a class as a function");
           })(this, t);
-          for (var a = arguments.length, i = Array(a), s = 0; s < a; s++)
-            i[s] = arguments[s];
+          for (var i = arguments.length, a = Array(i), s = 0; s < i; s++)
+            a[s] = arguments[s];
           return (
             (r = n = f(
               this,
               (e = t.__proto__ || Object.getPrototypeOf(t)).call.apply(
                 e,
-                [this].concat(i)
+                [this].concat(a)
               )
             )),
             (n.state = { isValid: !0, errors: new u.default() }),
             (n.onChange = function(e) {
               var t = n.props,
                 r = t.name,
-                a = t.rules,
-                i = e.target.value;
+                i = t.rules,
+                a = e.target.value;
               n.setState(function(e) {
                 return { errors: e.errors.clear([r]) };
               });
-              var u = new o.default(l({}, r, i), l({}, r, a)).validate();
+              var u = new o.default(l({}, r, a), l({}, r, i)).validate();
               u.validated ||
                 n.setState(function(e) {
                   return { isValid: !1, errors: e.errors.record(u.errors) };
                 }),
-                n.props.onChangeValue(i);
+                n.props.onChangeValue(a);
             }),
             f(n, r)
           );
@@ -349,7 +349,7 @@
                 (Object.setPrototypeOf
                   ? Object.setPrototypeOf(e, t)
                   : (e.__proto__ = t));
-          })(t, a.Component),
+          })(t, i.Component),
           n(t, [
             {
               key: "render",
@@ -369,9 +369,9 @@
         );
       })();
       (c.propTypes = {
-        value: i.default.oneOfType([i.default.string, i.default.number]),
-        rules: i.default.string,
-        name: i.default.string
+        value: a.default.oneOfType([a.default.string, a.default.number]),
+        rules: a.default.string,
+        name: a.default.string
       }),
         (t.default = c);
     },
@@ -391,15 +391,15 @@
                   ? "symbol"
                   : typeof e;
               },
-        a = (function() {
+        i = (function() {
           return function(e, t) {
             if (Array.isArray(e)) return e;
             if (Symbol.iterator in Object(e))
               return (function(e, t) {
                 var r = [],
                   n = !0,
-                  a = !1,
-                  i = void 0;
+                  i = !1,
+                  a = void 0;
                 try {
                   for (
                     var o, u = e[Symbol.iterator]();
@@ -408,12 +408,12 @@
                     n = !0
                   );
                 } catch (e) {
-                  (a = !0), (i = e);
+                  (i = !0), (a = e);
                 } finally {
                   try {
                     !n && u.return && u.return();
                   } finally {
-                    if (a) throw i;
+                    if (i) throw a;
                   }
                 }
                 return r;
@@ -423,7 +423,7 @@
             );
           };
         })(),
-        i = (function() {
+        a = (function() {
           function e(e, t) {
             for (var r = 0; r < t.length; r++) {
               var n = t[r];
@@ -465,7 +465,7 @@
               (this.rawForm = {});
           }
           return (
-            i(e, [
+            a(e, [
               {
                 key: "required",
                 value: function(e, t) {
@@ -487,7 +487,11 @@
                 value: function(e, t) {
                   return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(e)
                     ? this.passValidation()
-                    : this.brokeValidation(t, "Invalid email address", "email");
+                    : this.brokeValidation(
+                        t,
+                        "field is invalid email address",
+                        "email"
+                      );
                 }
               },
               {
@@ -496,7 +500,7 @@
                   return isNaN(e)
                     ? this.brokeValidation(
                         t,
-                        "field has to be a numeric value",
+                        "field is not a numeric value",
                         "number"
                       )
                     : this.passValidation();
@@ -511,7 +515,7 @@
                     ? this.passValidation()
                     : this.brokeValidation(
                         t,
-                        "field has to be a valid Url",
+                        "field is not a valid Url",
                         "url"
                       );
                 }
@@ -519,7 +523,7 @@
               {
                 key: "max",
                 value: function(e, t, r) {
-                  var n = a(r, 1)[0];
+                  var n = i(r, 1)[0];
                   return e.length <= n || !e
                     ? this.passValidation()
                     : this.brokeValidation(
@@ -532,7 +536,7 @@
               {
                 key: "min",
                 value: function(e, t, r) {
-                  var n = a(r, 1)[0];
+                  var n = i(r, 1)[0];
                   return e.length >= n || !e
                     ? this.passValidation()
                     : this.brokeValidation(
@@ -545,7 +549,7 @@
               {
                 key: "lessThan",
                 value: function(e, t, r) {
-                  var n = a(r, 1)[0];
+                  var n = i(r, 1)[0];
                   return parseInt(e) < parseInt(n) || !e
                     ? this.passValidation()
                     : this.brokeValidation(
@@ -558,7 +562,7 @@
               {
                 key: "greaterThan",
                 value: function(e, t, r) {
-                  var n = a(r, 1)[0];
+                  var n = i(r, 1)[0];
                   return parseInt(e) > parseInt(n) || !e
                     ? this.passValidation()
                     : this.brokeValidation(
@@ -571,15 +575,15 @@
               {
                 key: "between",
                 value: function(e, t, r) {
-                  var n = a(r, 2),
-                    i = n[0],
+                  var n = i(r, 2),
+                    a = n[0],
                     o = n[1];
-                  return e.length >= i && e.length <= o
+                  return e.length >= a && e.length <= o
                     ? this.passValidation()
                     : this.brokeValidation(
                         t,
                         "field must be at least " +
-                          i +
+                          a +
                           " character and not exceed " +
                           o +
                           " characters",
@@ -593,7 +597,7 @@
                   return isNaN(Date.parse(e))
                     ? this.brokeValidation(
                         t,
-                        "field must be a valid Date",
+                        "field is an invalid Date",
                         "date"
                       )
                     : this.passValidation();
@@ -603,11 +607,11 @@
                 key: "ifExist",
                 value: function(e, t, r) {
                   var n = u(r),
-                    a = n[0],
-                    i = n[1],
+                    i = n[0],
+                    a = n[1],
                     o = n.slice(2);
-                  return this.rawForm[a]
-                    ? this[i](e, t, o)
+                  return this.rawForm[i]
+                    ? this[a](e, t, o)
                     : this.passValidation();
                 }
               },
@@ -615,23 +619,23 @@
                 key: "ifDoesntExist",
                 value: function(e, t, r) {
                   var n = u(r),
-                    a = n[0],
-                    i = n[1],
+                    i = n[0],
+                    a = n[1],
                     o = n.slice(2);
-                  return this.rawForm[a]
+                  return this.rawForm[i]
                     ? this.passValidation()
-                    : this[i](e, t, o);
+                    : this[a](e, t, o);
                 }
               },
               {
                 key: "whenTrue",
                 value: function(e, t, r) {
                   var n = u(r),
-                    a = n[0],
-                    i = n[1],
+                    i = n[0],
+                    a = n[1],
                     o = n.slice(2);
-                  return "true" === a
-                    ? this[i](e, t, o)
+                  return "true" === i
+                    ? this[a](e, t, o)
                     : this.passValidation();
                 }
               },
@@ -639,13 +643,12 @@
                 key: "whenFalse",
                 value: function(e, t, r) {
                   var n = u(r),
-                    a = n[0],
-                    i = n[1],
+                    i = n[0],
+                    a = n[1],
                     o = n.slice(2);
-                  return (
-                    console.log(a),
-                    "false" === a ? this[i](e, t, o) : this.passValidation()
-                  );
+                  return "false" === i
+                    ? this[a](e, t, o)
+                    : this.passValidation();
                 }
               },
               {
@@ -653,7 +656,25 @@
                 value: function(e, t, r) {
                   return r.includes(e)
                     ? this.passValidation()
-                    : this.brokeValidation(t, "must be one of this", "in");
+                    : this.brokeValidation(
+                        t,
+                        "is not included in this array " + r,
+                        "in"
+                      );
+                }
+              },
+              {
+                key: "startsWith",
+                value: function(e, t, r) {
+                  return r.find(function(t) {
+                    return e.startsWith(t);
+                  })
+                    ? this.passValidation()
+                    : this.brokeValidation(
+                        t,
+                        "must be start with one of this word " + r,
+                        "endsWith"
+                      );
                 }
               },
               {
@@ -663,7 +684,11 @@
                     return e.endsWith(t);
                   })
                     ? this.passValidation()
-                    : this.brokeValidation(t, "must be end with", "endsWith");
+                    : this.brokeValidation(
+                        t,
+                        "must be end with one of this word " + r,
+                        "endsWith"
+                      );
                 }
               },
               {
@@ -676,13 +701,13 @@
                 key: "brokeValidation",
                 value: function(e, t, r) {
                   var n,
-                    a,
-                    i = this.rawForm.validationRules[e].message;
-                  return i
-                    ? (o((a = { error: !0 }), e, i[r] || i),
-                      o(a, "key", e),
-                      o(a, "type", r),
-                      a)
+                    i,
+                    a = this.rawForm.validationRules[e].message;
+                  return a
+                    ? (o((i = { error: !0 }), e, a[r] || a),
+                      o(i, "key", e),
+                      o(i, "type", r),
+                      i)
                     : (o((n = { error: !0 }), e, e + " " + t),
                       o(n, "key", e),
                       o(n, "type", r),
@@ -711,23 +736,23 @@
                   var r = this;
                   this.rawForm = e;
                   var n = Object.keys(t)
-                    .reduce(function(n, a) {
-                      var i = t[a];
-                      if (r.isString(i)) {
-                        var o = r.stringValidationhandler(e, i, a);
+                    .reduce(function(n, i) {
+                      var a = t[i];
+                      if (r.isString(a)) {
+                        var o = r.stringValidationhandler(e, a, i);
                         n = n.concat(o);
-                      } else if (r.isObject(i)) {
-                        var u = i.rules;
+                      } else if (r.isObject(a)) {
+                        var u = a.rules;
                         if (r.isArray(u)) {
-                          var s = r.mapRules(e, u, a);
+                          var s = r.mapRules(e, u, i);
                           n = n.concat(s);
                         }
                         if (r.isString(u)) {
-                          var l = r.stringValidationhandler(e, u, a);
+                          var l = r.stringValidationhandler(e, u, i);
                           n = n.concat(l);
                         }
-                      } else if (r.isArray(i)) {
-                        var f = r.mapRules(e, i, a);
+                      } else if (r.isArray(a)) {
+                        var f = r.mapRules(e, a, i);
                         n = n.concat(f);
                       }
                       return n;
@@ -748,33 +773,33 @@
         l = function() {
           var e = this;
           (this.stringValidationhandler = function(t, r, n) {
-            var a = [];
+            var i = [];
             if (r.includes("|")) {
-              var i = e.mapRules(t, r.split("|"), n);
-              a = a.concat(i);
-            } else a = a.concat(e.singleRules(t, r, n));
-            return a;
+              var a = e.mapRules(t, r.split("|"), n);
+              i = i.concat(a);
+            } else i = i.concat(e.singleRules(t, r, n));
+            return i;
           }),
             (this.mapRules = function(t, r, n) {
               return r.map(function(r) {
                 if (r.includes(":")) {
-                  var a = u(r.split(":")),
-                    i = a[0],
-                    o = a.slice(1);
-                  return e[i](t[n], n, o);
+                  var i = u(r.split(":")),
+                    a = i[0],
+                    o = i.slice(1);
+                  return e[a](t[n], n, o);
                 }
                 return e[r](t[n], n);
               });
             }),
             (this.singleRules = function(t, r, n) {
-              var a = [];
+              var i = [];
               if (r.includes(":")) {
-                var i = u(r.split(":")),
-                  o = i[0],
-                  s = i.slice(1);
-                a = a.concat(e[o](t[n], n, s));
-              } else a = a.concat(e[r](t[n], n));
-              return a;
+                var a = u(r.split(":")),
+                  o = a[0],
+                  s = a.slice(1);
+                i = i.concat(e[o](t[n], n, s));
+              } else i = i.concat(e[r](t[n], n));
+              return i;
             }),
             (this.isString = function(e) {
               return "string" == typeof e;
@@ -801,9 +826,9 @@
     function(e, t, r) {
       "use strict";
       var n = r(6);
-      function a() {}
+      function i() {}
       e.exports = function() {
-        function e(e, t, r, a, i, o) {
+        function e(e, t, r, i, a, o) {
           if (o !== n) {
             var u = new Error(
               "Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types"
@@ -834,7 +859,7 @@
           shape: t,
           exact: t
         };
-        return (r.checkPropTypes = a), (r.PropTypes = r), r;
+        return (r.checkPropTypes = i), (r.PropTypes = r), r;
       };
     },
     function(e, t, r) {
@@ -850,15 +875,15 @@
             }
             return e;
           },
-        a = (function() {
+        i = (function() {
           return function(e, t) {
             if (Array.isArray(e)) return e;
             if (Symbol.iterator in Object(e))
               return (function(e, t) {
                 var r = [],
                   n = !0,
-                  a = !1,
-                  i = void 0;
+                  i = !1,
+                  a = void 0;
                 try {
                   for (
                     var o, u = e[Symbol.iterator]();
@@ -867,12 +892,12 @@
                     n = !0
                   );
                 } catch (e) {
-                  (a = !0), (i = e);
+                  (i = !0), (a = e);
                 } finally {
                   try {
                     !n && u.return && u.return();
                   } finally {
-                    if (a) throw i;
+                    if (i) throw a;
                   }
                 }
                 return r;
@@ -882,7 +907,7 @@
             );
           };
         })(),
-        i = (function() {
+        a = (function() {
           function e(e, t) {
             for (var r = 0; r < t.length; r++) {
               var n = t[r];
@@ -912,7 +937,7 @@
       }
       var d = (function(e) {
         function t() {
-          var e, r, i;
+          var e, r, a;
           !(function(e, t) {
             if (!(e instanceof t))
               throw new TypeError("Cannot call a class as a function");
@@ -920,31 +945,31 @@
           for (var o = arguments.length, u = Array(o), f = 0; f < o; f++)
             u[f] = arguments[f];
           return (
-            (r = i = c(
+            (r = a = c(
               this,
               (e = t.__proto__ || Object.getPrototypeOf(t)).call.apply(
                 e,
                 [this].concat(u)
               )
             )),
-            (i.toArray = function(e) {
+            (a.toArray = function(e) {
               return Object.entries(e).reduce(function(e, t) {
-                var r = a(t, 2),
+                var r = i(t, 2),
                   n = r[0],
-                  i = r[1];
-                return e.concat({ key: n, value: i });
+                  a = r[1];
+                return e.concat({ key: n, value: a });
               }, []);
             }),
-            (i.state = {
+            (a.state = {
               isValid: !0,
               errors: new l.default(),
-              data: i.toArray(i.props.data)
+              data: a.toArray(a.props.data)
             }),
-            (i.onChange = function(e) {
+            (a.onChange = function(e) {
               return function(t) {
                 var r = t.target.value;
-                i.props.validateOnChange &&
-                  i.validate(
+                a.props.validateOnChange &&
+                  a.validate(
                     (function(e, t, r) {
                       return (
                         t in e
@@ -959,28 +984,28 @@
                       );
                     })({}, e, r)
                   ),
-                  i.props.onChangeValue && i.props.onChangeValue(e, r);
+                  a.props.onChangeValue && a.props.onChangeValue(e, r);
               };
             }),
-            (i.onSubmit = function(e) {
-              var t = i.validate();
-              i.props.onSubmit && i.props.onSubmit(e, t.validated);
+            (a.onSubmit = function(e) {
+              var t = a.validate();
+              a.props.onSubmit && a.props.onSubmit(e, t.validated);
             }),
-            (i.validate = function(e) {
-              var t = i.props,
+            (a.validate = function(e) {
+              var t = a.props,
                 r = t.rules,
-                a = t.data,
-                o = n({}, a, e),
+                i = t.data,
+                o = n({}, i, e),
                 u = new s.default(o, n({}, r)).validate();
               if (!u.validated)
                 return (
-                  i.setState(function(e) {
+                  a.setState(function(e) {
                     return { isValid: !1, errors: e.errors.record(u.errors) };
                   }),
                   u
                 );
             }),
-            c(i, r)
+            c(a, r)
           );
         }
         return (
@@ -1003,7 +1028,7 @@
                   ? Object.setPrototypeOf(e, t)
                   : (e.__proto__ = t));
           })(t, o.Component),
-          i(t, [
+          a(t, [
             {
               key: "render",
               value: function() {
@@ -1039,9 +1064,9 @@
     function(e, t, r) {
       "use strict";
       Object.defineProperty(t, "__esModule", { value: !0 });
-      var n = a(r(8));
-      a(r(4));
-      function a(e) {
+      var n = i(r(8));
+      i(r(4));
+      function i(e) {
         return e && e.__esModule ? e : { default: e };
       }
       t.default = n.default;

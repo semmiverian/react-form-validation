@@ -9,10 +9,10 @@ class App extends Component {
   };
 
   // rules using array
-  rules = {
-    email: ["required", "email"],
-    password: ["required", "between:5:10"]
-  };
+  // rules = {
+  //   email: ["required", "email"],
+  //   password: ["required", "between:5:10"]
+  // };
 
   // rules using string
   // rules = {
@@ -21,19 +21,20 @@ class App extends Component {
   // }
 
   // rules using object and custom global message and custom message
-  // rules = {
-  //   email: {
-  //     rules: ["required", "email"],
-  //     message: "Please allow me to filling your inbox"
-  //   },
-  //   password: {
-  //     rules: "required|between:5:10",
-  //     message: {
-  //       required: "Allow yourself to come to our system",
-  //       between: "Make yourself secure"
-  //     }
-  //   }
-  // };
+  // errror ketika custom message nya cuman 1 padahal ada dua validation yang failed
+  rules = {
+    email: {
+      rules: ["required", "email"],
+      message: "Please allow me to filling your inbox"
+    },
+    password: {
+      rules: "required|between:5:10",
+      message: {
+        required: "Allow yourself to come to our system",
+        between: "Make yourself secure"
+      }
+    }
+  };
 
   onChangeValue = (key, value) => {
     this.setState({ [key]: value });
@@ -53,6 +54,7 @@ class App extends Component {
           validateOnChange={false}
         >
           {({ isValidate, errors, onChange, data, onSubmit }) => {
+            console.log(data);
             return (
               <form onSubmit={onSubmit}>
                 {data.map(item => {
