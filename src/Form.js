@@ -21,22 +21,36 @@ export default class Form extends Component {
 
   static propTypes = {
     data: PropTypes.object,
-    rules: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    rules: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+      PropTypes.array
+    ]),
     name: PropTypes.string
+  };
+
+  static defaultProps = {
+    validateOnChange: true
   };
 
   onChange = key => e => {
     const value = e.target.value;
 
-    const validation = this.validate({ [key]: value });
-    // check nanti dia mau ngevalidasi setiap change apa engga? kalau iya kirim hasil validasi nya
-    this.props.onChangeValue(key, value);
+    if (this.props.validateOnChange) {
+      this.validate({ [key]: value });
+    }
+
+    if (this.props.onChangeValue) {
+      this.props.onChangeValue(key, value);
+    }
   };
 
   onSubmit = e => {
     const validation = this.validate();
 
-    this.props.onSubmit(e, validation.validated);
+    if (this.props.onSubmit) {
+      this.props.onSubmit(e, validation.validated);
+    }
   };
 
   validate = overrideData => {

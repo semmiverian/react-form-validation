@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+// import { Form } from "react-form-validation-render-props";
 import { Form } from "./dist/index";
-import Coba from "./Coba";
 
 class App extends Component {
   state = {
@@ -8,12 +8,34 @@ class App extends Component {
     password: ""
   };
 
+  // rules using array
+  // rules = {
+  //   email: ["required", "email"],
+  //   password: ["required", "between:5:10"]
+  // };
+
+  // rules using string
+  // rules = {
+  //   email: 'required|email',
+  //   password: 'required|between:5:10'
+  // }
+
+  // rules using object and custom global message and custom message
   rules = {
-    email: ["required", "email"],
-    password: ["required", "between:5:10"]
+    email: {
+      rules: ["required", "email"],
+      message: "Please allow me to filling your inbox"
+    },
+    password: {
+      rules: "required|between:5:10",
+      message: {
+        required: "Allow yourself to come to our system",
+        between: "Make yourself secure"
+      }
+    }
   };
 
-  onChange = (key, value) => {
+  onChangeValue = (key, value) => {
     this.setState({ [key]: value });
   };
 
@@ -27,8 +49,8 @@ class App extends Component {
         <Form
           data={this.state}
           rules={this.rules}
-          onChangeValue={this.onChange}
           onSubmit={this.onSubmit}
+          validateOnChange={false}
         >
           {({ isValidate, errors, onChange, data, onSubmit }) => {
             return (
