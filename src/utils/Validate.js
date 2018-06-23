@@ -180,6 +180,18 @@ export default class Validator {
     );
   }
 
+  startsWith(data, key, params) {
+    if (params.find(param => data.startsWith(param))) {
+      return this.passValidation();
+    }
+
+    return this.brokeValidation(
+      key,
+      `must be start with one of this word ${params}`,
+      "endsWith"
+    );
+  }
+
   endsWith(data, key, params) {
     if (params.find(param => data.endsWith(param))) {
       return this.passValidation();

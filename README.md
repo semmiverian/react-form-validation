@@ -7,6 +7,20 @@
 Wrapper component with ability to validating any user input with various available rules using render props pattern.
 Inspired by laravel validation rules
 
+# Installation
+
+Using Npm
+
+```
+npm install react-form-validation-render-prop
+```
+
+Using Yarn
+
+```
+yarn add react-form-validation-render-props
+```
+
 ## Example
 
 ```javascript
