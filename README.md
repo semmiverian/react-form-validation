@@ -2,6 +2,30 @@
 
 ## Table of content
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
+
+- [React Form Validation](#react-form-validation)
+  - [Table of content](#table-of-content)
+  - [Introduction](#introduction)
+- [Installation](#installation)
+  - [Example](#example)
+  - [Available Props](#available-props)
+  - [Children Function](#children-function)
+    - [Arguments in the children function](#arguments-in-the-children-function)
+      - [data](#data)
+      - [isValidate](#isvalidate)
+      - [errors](#errors)
+      - [onChange](#onchange)
+    - [onSubmit](#onsubmit)
+  - [Rules](#rules) - [Relation between Rule and Data](#relation-between-rule-and-data) - [Using Parameters](#using-parameters) - [Rules As Array](#rules-as-array) - [Rules As String](#rules-as-string) - [Rules As Object and Custom error message](#rules-as-object-and-custom-error-message) - [Custom message For every fail rule](#custom-message-for-every-fail-rule) - [Custom message For detail fail rule](#custom-message-for-detail-fail-rule) - [Available Rules](#available-rules)
+  - [To do](#to-do)
+  - [Thanks to](#thanks-to)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Introduction
 
 Wrapper component with ability to validating any user input with various available rules using render props pattern.
@@ -380,4 +404,10 @@ then if your email validation is failed in any rules that fail the `[key]` at yo
 
 ## To do
 
+- [] Writing Test
+
 ## Thanks to
+
+- Kent C Dods - [Advance React Component](https://egghead.io/courses/advanced-react-component-patterns)
+- Jeffrey Way - [Form Validation at vue](https://laracasts.com/series/learn-vue-2-step-by-step/episodes/19)
+- Laravel Validation - [Laravel Validation](https://laravel.com/docs/5.6/validation)
