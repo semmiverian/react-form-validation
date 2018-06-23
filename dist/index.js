@@ -1038,13 +1038,13 @@
     },
     function(e, t, r) {
       "use strict";
-      Object.defineProperty(t, "__esModule", { value: !0 }), (t.Form = void 0);
+      Object.defineProperty(t, "__esModule", { value: !0 });
       var n = a(r(8));
       a(r(4));
       function a(e) {
         return e && e.__esModule ? e : { default: e };
       }
-      t.Form = n.default;
+      t.default = n.default;
     }
   ])
 );

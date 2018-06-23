@@ -23,7 +23,11 @@ export default class Validator {
 
   email(data, key) {
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(data)) {
-      return this.brokeValidation(key, "Invalid email address", "email");
+      return this.brokeValidation(
+        key,
+        "field is invalid email address",
+        "email"
+      );
     }
 
     return this.passValidation();
@@ -33,11 +37,7 @@ export default class Validator {
     if (!isNaN(data)) {
       return this.passValidation();
     }
-    return this.brokeValidation(
-      key,
-      "field has to be a numeric value",
-      "number"
-    );
+    return this.brokeValidation(key, "field is not a numeric value", "number");
   }
 
   url(data, key) {
@@ -50,7 +50,7 @@ export default class Validator {
       return this.passValidation();
     }
 
-    return this.brokeValidation(key, "field has to be a valid Url", "url");
+    return this.brokeValidation(key, "field is not a valid Url", "url");
   }
 
   max(data, key, params) {
@@ -126,7 +126,7 @@ export default class Validator {
       return this.passValidation();
     }
 
-    return this.brokeValidation(key, "field must be a valid Date", "date");
+    return this.brokeValidation(key, "field is an invalid Date", "date");
   }
 
   ifExist(data, key, params) {
@@ -160,7 +160,7 @@ export default class Validator {
 
   whenFalse(data, key, params) {
     const [whenCondition, otherRule, ...rest] = params;
-    console.log(whenCondition);
+
     if (whenCondition === "false") {
       return this[otherRule](data, key, rest);
     }
@@ -173,7 +173,11 @@ export default class Validator {
       return this.passValidation();
     }
 
-    return this.brokeValidation(key, "must be one of this", "in");
+    return this.brokeValidation(
+      key,
+      `is not included in this array ${params}`,
+      "in"
+    );
   }
 
   endsWith(data, key, params) {
@@ -181,7 +185,11 @@ export default class Validator {
       return this.passValidation();
     }
 
-    return this.brokeValidation(key, "must be end with", "endsWith");
+    return this.brokeValidation(
+      key,
+      `must be end with one of this word ${params}`,
+      "endsWith"
+    );
   }
 
   passValidation() {
