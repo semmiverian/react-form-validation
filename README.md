@@ -49,7 +49,7 @@ yarn add react-form-validation-render-props
 
 ```javascript
 import React, { Component } from "react";
-import Form from "react-form-validation-render-props";
+import { Form } from "react-form-validation-render-props";
 
 class App extends Component {
   state = {

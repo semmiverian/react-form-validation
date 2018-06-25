@@ -702,13 +702,18 @@
                 value: function(e, t, r) {
                   var n,
                     i,
-                    a = this.rawForm.validationRules[e].message;
+                    a = this.rawForm.validationRules[e].message,
+                    u = e + " " + t;
                   return a
-                    ? (o((i = { error: !0 }), e, a[r] || a),
+                    ? (o(
+                        (i = { error: !0 }),
+                        e,
+                        this.isString(a) ? a : a[r] || u
+                      ),
                       o(i, "key", e),
                       o(i, "type", r),
                       i)
-                    : (o((n = { error: !0 }), e, e + " " + t),
+                    : (o((n = { error: !0 }), e, u),
                       o(n, "key", e),
                       o(n, "type", r),
                       n);
