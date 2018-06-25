@@ -225,7 +225,7 @@ export default class Validator {
   toObject(errors) {
     return errors.reduce((carry, item) => {
       const isUsingGlobalCustomMessage = this.isString(
-        this.rawForm.validationRules[key].message
+        this.rawForm.validationRules[item.key].message
       );
 
       if (isUsingGlobalCustomMessage) {

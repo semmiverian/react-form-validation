@@ -34,6 +34,7 @@ export default class Form extends Component {
   };
 
   onChange = key => e => {
+    console.log(key);
     const value = e.target.value;
 
     if (this.props.validateOnChange) {
@@ -46,6 +47,7 @@ export default class Form extends Component {
   };
 
   onSubmit = e => {
+    console.log("test");
     const validation = this.validate();
 
     if (this.props.onSubmit) {

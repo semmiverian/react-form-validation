@@ -725,7 +725,7 @@
                   var t = this;
                   return e.reduce(function(e, r) {
                     return (
-                      t.isString(t.rawForm.validationRules[key].message)
+                      t.isString(t.rawForm.validationRules[r.key].message)
                         ? (e[r.key] = r[r.key])
                         : e[r.key]
                           ? (e[r.key] = e[r.key] + ", " + r[r.key])
@@ -972,6 +972,7 @@
             }),
             (a.onChange = function(e) {
               return function(t) {
+                console.log(e);
                 var r = t.target.value;
                 a.props.validateOnChange &&
                   a.validate(
@@ -993,6 +994,7 @@
               };
             }),
             (a.onSubmit = function(e) {
+              console.log("test");
               var t = a.validate();
               a.props.onSubmit && a.props.onSubmit(e, t.validated);
             }),
@@ -1068,13 +1070,13 @@
     },
     function(e, t, r) {
       "use strict";
-      Object.defineProperty(t, "__esModule", { value: !0 });
+      Object.defineProperty(t, "__esModule", { value: !0 }), (t.Form = void 0);
       var n = i(r(8));
       i(r(4));
       function i(e) {
         return e && e.__esModule ? e : { default: e };
       }
-      t.default = n.default;
+      t.Form = n.default;
     }
   ])
 );

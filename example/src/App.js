@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Form from "react-form-validation-render-props";
-// import Form from "./dist/index";
+import { Form } from "react-form-validation-render-props";
+// import { Form } from "./dist/index";
 
 class App extends Component {
   state = {
@@ -45,7 +45,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(Form);
     return (
       <div className="App">
         <Form
@@ -55,10 +54,10 @@ class App extends Component {
           validateOnChange={false}
         >
           {({ isValidate, errors, onChange, data, onSubmit }) => {
-            console.log(data);
             return (
               <form onSubmit={onSubmit}>
                 {data.map(item => {
+                  console.log(item.key);
                   return (
                     <div key={item.key}>
                       <label>{item.key}</label>

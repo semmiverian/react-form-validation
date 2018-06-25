@@ -5675,9 +5675,9 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
-react-form-validation-render-props@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/react-form-validation-render-props/-/react-form-validation-render-props-0.1.5.tgz#4836250591221976252d2740e23098fbd7870335"
+react-form-validation-render-props@0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/react-form-validation-render-props/-/react-form-validation-render-props-0.1.6.tgz#687107314ff1744c1814c01aa25d924e01909cab"
   dependencies:
     prop-types "15.6.2"
 
