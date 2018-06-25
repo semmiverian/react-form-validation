@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import { Form } from "react-form-validation-render-props";
-import { Form } from "./dist/index";
+import Form from "react-form-validation-render-props";
+// import Form from "./dist/index";
 
 class App extends Component {
   state = {
@@ -15,10 +15,10 @@ class App extends Component {
   // };
 
   // rules using string
-  // rules = {
-  //   email: 'required|email',
-  //   password: 'required|between:5:10'
-  // }
+  rules = {
+    email: "required|email",
+    password: "required|between:5:10"
+  };
 
   // rules using object and custom global message and custom message
   // errror ketika custom message nya cuman 1 padahal ada dua validation yang failed
@@ -45,6 +45,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(Form);
     return (
       <div className="App">
         <Form

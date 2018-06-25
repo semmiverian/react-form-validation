@@ -210,12 +210,16 @@ export default class Validator {
 
   brokeValidation(key, message, type) {
     const customMessage = this.rawForm.validationRules[key].message;
+    const defaultMessage = `${key} ${message}`;
+
     if (customMessage) {
-      const errorMessage = customMessage[type] || customMessage;
+      const errorMessage = this.isString(customMessage)
+        ? customMessage
+        : customMessage[type] || defaultMessage;
 
       return { error: true, [key]: errorMessage, key, type };
     }
-    return { error: true, [key]: `${key} ${message}`, key, type };
+    return { error: true, [key]: defaultMessage, key, type };
   }
 
   toObject(errors) {
