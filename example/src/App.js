@@ -15,10 +15,10 @@ class App extends Component {
   // };
 
   // rules using string
-  rules = {
-    email: "required|email",
-    password: "required|between:5:10"
-  };
+  // rules = {
+  //   email: "required|email",
+  //   password: "required|between:5:10"
+  // };
 
   // rules using object and custom global message and custom message
   // errror ketika custom message nya cuman 1 padahal ada dua validation yang failed
@@ -30,8 +30,8 @@ class App extends Component {
     password: {
       rules: "required|between:5:10",
       message: {
-        required: "Allow yourself to come to our system",
-        between: "Make yourself secure"
+        required: "Allow yourself to come to our system"
+        // between: "Make yourself secure"
       }
     }
   };
@@ -51,7 +51,7 @@ class App extends Component {
           data={this.state}
           rules={this.rules}
           onSubmit={this.onSubmit}
-          validateOnChange={false}
+          // validateOnChange={false}
         >
           {({ isValidate, errors, onChange, data, onSubmit }) => {
             return (
