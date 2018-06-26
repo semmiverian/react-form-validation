@@ -131,6 +131,7 @@ export default class Validator {
 
   ifExist(data, key, params) {
     const [comparison, otherRule, ...rest] = params;
+
     if (this.rawForm[comparison]) {
       return this[otherRule](data, key, rest);
     }
@@ -181,7 +182,7 @@ export default class Validator {
   }
 
   startsWith(data, key, params) {
-    if (params.find(param => data.startsWith(param))) {
+    if (params.filter(param => param.startsWith(data)).length !== 0) {
       return this.passValidation();
     }
 
@@ -193,7 +194,7 @@ export default class Validator {
   }
 
   endsWith(data, key, params) {
-    if (params.find(param => data.endsWith(param))) {
+    if (params.filter(param => param.endsWith(data)).length !== 0) {
       return this.passValidation();
     }
 

@@ -666,9 +666,10 @@
               {
                 key: "startsWith",
                 value: function(e, t, r) {
-                  return r.find(function(t) {
-                    return e.startsWith(t);
-                  })
+                  return 0 !==
+                    r.filter(function(t) {
+                      return t.startsWith(e);
+                    }).length
                     ? this.passValidation()
                     : this.brokeValidation(
                         t,
@@ -680,9 +681,10 @@
               {
                 key: "endsWith",
                 value: function(e, t, r) {
-                  return r.find(function(t) {
-                    return e.endsWith(t);
-                  })
+                  return 0 !==
+                    r.filter(function(t) {
+                      return t.endsWith(e);
+                    }).length
                     ? this.passValidation()
                     : this.brokeValidation(
                         t,
