@@ -4,9 +4,10 @@
   "description": "Form Validation for React using render props",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest ",
+    "test:watch": "jest --watch",
     "prepublish": "rm -rf ./dist && npm run build",
-    "precommit": "pretty-quick --staged",
+    "precommit": "npm run test && pretty-quick --staged",
     "build": "webpack --config webpack.config.js"
   },
   "repository": {
@@ -39,10 +40,12 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
     "husky": "0.14.3",
+    "jest": "23.2.0",
     "prettier": "1.13.5",
     "pretty-quick": "1.6.0",
     "react": "16.4.1",
     "react-dom": "16.4.1",
+    "react-testing-library": "4.1.2",
     "webpack": "4.12.0",
     "webpack-cli": "3.0.8"
   }

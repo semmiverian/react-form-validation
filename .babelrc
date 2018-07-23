@@ -5,5 +5,21 @@
       "react"
     ]
   ],
-  "plugins": ["transform-class-properties", "transform-object-rest-spread"]
+  "plugins": ["transform-class-properties", "transform-object-rest-spread"],
+  "env": {
+    "test": {
+      "presets": [
+        "env",
+        "react"
+      ],
+      "plugins":[
+        "transform-class-properties",
+        "transform-object-rest-spread"
+      ],
+      "only": [
+        "./**/*.js",
+        "node_modules/jest-runtime"
+      ]
+    }
+  }
 }
