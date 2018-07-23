@@ -1,6 +1,6 @@
 {
   "name": "react-form-validation-render-props",
-  "version": "0.1.9",
+  "version": "0.1.12",
   "description": "Form Validation for React using render props",
   "main": "./dist/index.js",
   "scripts": {
